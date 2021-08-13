@@ -6,6 +6,8 @@ authors = ["bruno Xavier <bruno.xavier@calindra.com.br>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+fastapi = "^0.68.0"
+uvicorn = "^0.14.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
