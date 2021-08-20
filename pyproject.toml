@@ -5,7 +5,7 @@ description = "POC of AWS kinesis"
 authors = ["bruno Xavier <bruno.xavier@calindra.com.br>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.9.6"
 fastapi = "^0.68.0"
 uvicorn = "^0.14.0"
 
