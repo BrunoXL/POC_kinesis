@@ -7,4 +7,4 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"Hello": "Consumer"}
+    return "Consumer is on and running"
