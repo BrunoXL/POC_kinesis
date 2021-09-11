@@ -8,6 +8,7 @@ authors = ["bruno Xavier <bruno.xavier@calindra.com.br>"]
 python = "^3.9.6"
 fastapi = "^0.68.0"
 uvicorn = "^0.14.0"
+boto3 = "^1.18.33"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
