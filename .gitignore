@@ -1,3 +1,6 @@
 //compiled python data
 *pyc
 /__pychache__
+
+//env variables setup
+setup.sh
