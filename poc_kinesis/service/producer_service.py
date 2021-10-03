@@ -4,8 +4,8 @@ import logging
 from fastapi import HTTPException
 
 async def producer_service():
-    aws_secret: string
-    aws_id: string
+    aws_secret: str
+    aws_id: str
 
     try:
         aws_secret = os.environ['AWS_SECRET_ACCESS_KEY']
@@ -13,6 +13,4 @@ async def producer_service():
     except Exception as e:
         logging.error(f"Variaveis de ambientes não definidas")
         raise HTTPException(status_code=401, detail=e.args)
-
-    client = boto3.client('kinesis', aws_access_key_id=aws_id, aws_secret_access_key=aws_secret)
   
