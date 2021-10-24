@@ -13,4 +13,4 @@ def read_root():
 @app.post("/messages")
 async def send_messages():
     await producer_service()
-    return
+    return {} 
