@@ -2,5 +2,5 @@
 *pyc
 /__pychache__
 
-//env variables setup
-setup.sh
+//env variables setup && start
+start_producer.sh
