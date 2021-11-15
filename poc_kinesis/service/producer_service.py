@@ -1,10 +1,12 @@
+from typing import AsyncIterator
 import boto3
 import os
 import logging
+import asyncio
 from fastapi import HTTPException
 
 logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+logger = logging.getLogger(__name__.split('.')[-1])
 
 async def producer_service():
     aws_secret: str
@@ -20,17 +22,16 @@ async def producer_service():
 
     producer = boto3.client('kinesis', aws_access_key_id=aws_id, aws_secret_access_key=aws_secret)
 
-    message: str = 'Teste: enviando menssagem ao kinesis'
-
     logger.info(f"Pronto para inserir mensagens em {STREAM_NAME}")
 
-    producer.put_record(
-        StreamName=STREAM_NAME,
-        Data=message,
-        PartitionKey='partitionkey')
+    msg_id: int = 0
 
-    logger.info(f"Mensagens inseridas com sucesso")
-
-
-# def encode_messages(message):
-#     return str.encode(message)
+    while True:
+        message: str = f'Teste {msg_id}: enviando mensagem ao kinesis'
+        producer.put_record(
+            StreamName=STREAM_NAME,
+            Data=message,
+            PartitionKey='partitionkey')
+        await asyncio.sleep(1)
+        logger.info(f"Mensagem {msg_id} inseridas com sucesso")
+        msg_id = msg_id + 1
