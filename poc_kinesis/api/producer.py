@@ -10,7 +10,7 @@ app = FastAPI()
 def read_root():
     return "Producer is on and running"
 
-@app.post("/messages/put-record")
+@app.post("/messages")
 async def send_messages():
     await ProducerService.put_record()
     return {} 
