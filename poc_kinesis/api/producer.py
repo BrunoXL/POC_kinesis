@@ -1,5 +1,5 @@
-from typing import Optional
 from fastapi import FastAPI
+
 from poc_kinesis.service.producer_service import ProducerService
 
 import asyncio
