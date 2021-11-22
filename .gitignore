@@ -4,3 +4,4 @@
 
 //env variables setup && start
 start_producer.sh
+start_consumer.sh
